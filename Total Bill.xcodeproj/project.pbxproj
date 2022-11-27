@@ -14,6 +14,8 @@
 		047B9C6E293241A400B0866A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 047B9C6C293241A400B0866A /* LaunchScreen.storyboard */; };
 		047B9C7629324EFA00B0866A /* TotalBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B9C7529324EFA00B0866A /* TotalBillView.swift */; };
 		047B9C782932552100B0866A /* PersonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B9C772932552100B0866A /* PersonsView.swift */; };
+		047B9C7C2933E26D00B0866A /* TipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B9C7B2933E26D00B0866A /* TipsCollectionViewCell.swift */; };
+		047B9C822933E4D200B0866A /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B9C812933E4D200B0866A /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		047B9C6F293241A400B0866A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		047B9C7529324EFA00B0866A /* TotalBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBillView.swift; sourceTree = "<group>"; };
 		047B9C772932552100B0866A /* PersonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsView.swift; sourceTree = "<group>"; };
+		047B9C7B2933E26D00B0866A /* TipsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewCell.swift; sourceTree = "<group>"; };
+		047B9C812933E4D200B0866A /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,50 @@
 		047B9C60293241A200B0866A /* Total Bill */ = {
 			isa = PBXGroup;
 			children = (
-				047B9C61293241A200B0866A /* AppDelegate.swift */,
-				047B9C63293241A200B0866A /* SceneDelegate.swift */,
-				047B9C65293241A200B0866A /* MainViewController.swift */,
-				047B9C7529324EFA00B0866A /* TotalBillView.swift */,
-				047B9C772932552100B0866A /* PersonsView.swift */,
+				047B9C7D2933E2A200B0866A /* Application */,
+				047B9C7E2933E2D100B0866A /* Controllers */,
+				047B9C7F2933E2E400B0866A /* Views */,
 				047B9C6A293241A400B0866A /* Assets.xcassets */,
 				047B9C6C293241A400B0866A /* LaunchScreen.storyboard */,
 				047B9C6F293241A400B0866A /* Info.plist */,
 			);
 			path = "Total Bill";
+			sourceTree = "<group>";
+		};
+		047B9C7D2933E2A200B0866A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				047B9C61293241A200B0866A /* AppDelegate.swift */,
+				047B9C63293241A200B0866A /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		047B9C7E2933E2D100B0866A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				047B9C65293241A200B0866A /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		047B9C7F2933E2E400B0866A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				047B9C802933E33200B0866A /* Cells */,
+				047B9C7529324EFA00B0866A /* TotalBillView.swift */,
+				047B9C772932552100B0866A /* PersonsView.swift */,
+				047B9C812933E4D200B0866A /* TipsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		047B9C802933E33200B0866A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				047B9C7B2933E26D00B0866A /* TipsCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +181,8 @@
 				047B9C7629324EFA00B0866A /* TotalBillView.swift in Sources */,
 				047B9C782932552100B0866A /* PersonsView.swift in Sources */,
 				047B9C66293241A200B0866A /* MainViewController.swift in Sources */,
+				047B9C7C2933E26D00B0866A /* TipsCollectionViewCell.swift in Sources */,
+				047B9C822933E4D200B0866A /* TipsView.swift in Sources */,
 				047B9C62293241A200B0866A /* AppDelegate.swift in Sources */,
 				047B9C64293241A200B0866A /* SceneDelegate.swift in Sources */,
 			);
