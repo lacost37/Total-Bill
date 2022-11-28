@@ -32,6 +32,8 @@ class PersonsView: UIView {
         button.setTitle("-", for: .normal)
         button.tintColor = #colorLiteral(red: 0.4510066509, green: 0.4966486692, blue: 0.5633206367, alpha: 1)
         button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+        button.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
+        button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -41,6 +43,7 @@ class PersonsView: UIView {
         button.setTitle("+", for: .normal)
         button.tintColor = #colorLiteral(red: 0.4510066509, green: 0.4966486692, blue: 0.5633206367, alpha: 1)
         button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+        button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -54,6 +57,8 @@ class PersonsView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    var counter = 0
         
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -99,6 +104,21 @@ class PersonsView: UIView {
             counterLabel.leadingAnchor.constraint(equalTo: minusbutton.trailingAnchor, constant: 10),
             counterLabel.trailingAnchor.constraint(equalTo: plusButton.leadingAnchor, constant: -10),
         ])
+    }
+    
+    @objc func minusButtonTapped() {
+        
+        if counter == 0 {
+            minusbutton.isEnabled = false
+        } else {
+            counter -= 1
+            counterLabel.text = "\(counter)"        }
+    }
+    
+    @objc func plusButtonTapped() {
+        counter += 1
+        counterLabel.text = "\(counter)"
+        minusbutton.isEnabled = true
     }
 }
 

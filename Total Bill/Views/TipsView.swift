@@ -27,6 +27,7 @@ class TipsView: UIView {
     }()
     
     let tipsArray = ["0%", "10%", "15%", "20%"]
+    var tipsCount = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -71,9 +72,20 @@ extension TipsView: UICollectionViewDataSource {
 
 extension TipsView: UICollectionViewDelegate {
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            tipsCount = 0
+        case 1:
+            tipsCount = 10
+        case 2:
+            tipsCount = 15
+        case 3:
+            tipsCount = 20
+        default:
+            tipsCount = 0
+        }
+    }
     
 }
 

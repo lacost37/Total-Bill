@@ -44,6 +44,7 @@ class MainViewController: UIViewController {
         button.tintColor = .white
         button.backgroundColor = #colorLiteral(red: 0.639077723, green: 0.2492567599, blue: 0.6254395843, alpha: 1)
         button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
         button.titleLabel?.font = UIFont(name: "Avenir Next", size: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -58,6 +59,7 @@ class MainViewController: UIViewController {
         
         setupViews()
         setConstraints()
+        addTap()
         
     }
     
@@ -73,11 +75,37 @@ class MainViewController: UIViewController {
         view.addSubview(tipsVIew)
     }
     
-    
+    @objc func calculateButtonTapped() {
+        guard let totalBill = totalBillView.sumTextField.text,
+              let totalBillInt = Int(totalBill) else { return }
+        
+        let sum = totalBillInt + totalBillInt * tipsVIew.tipsCount / 100
+        let persons = personsView.counter
+        
+        if persons == 0 {
+            descriptionLabel.text = "Введите количество гостей"
+            descriptionLabel.textColor = .red
 
+        } else {
+            let result = sum / persons
+            descriptionLabel.text = "\(result) на человека"
+            descriptionLabel.textColor = .black
+        }
+        
+    }
+    
+    func addTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
+        // для прожатия коллекций
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    @objc func hideKeyBoard() {
+        view.endEditing(true)
+    }
 }
 
-
+    
 
 
 extension MainViewController { // расположение объектов

@@ -23,6 +23,7 @@ class TotalBillView: UIView {
         textFiled.backgroundColor = #colorLiteral(red: 0.9561659694, green: 0.9591339231, blue: 0.9530903697, alpha: 1)
         textFiled.layer.cornerRadius = 10
         textFiled.textColor = .black
+        textFiled.tintColor = #colorLiteral(red: 0.639077723, green: 0.2492567599, blue: 0.6254395843, alpha: 1)
         textFiled.font = UIFont(name: "Avenir Next Bold", size: 48)
         textFiled.textAlignment = .center
         textFiled.keyboardType = .numberPad
@@ -43,7 +44,6 @@ class TotalBillView: UIView {
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         
-        
         addSubview(titleLabel)
         addSubview(sumTextField)
     }
@@ -57,8 +57,6 @@ class TotalBillView: UIView {
             sumTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             sumTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             sumTextField.heightAnchor.constraint(equalToConstant: 100)
-            
-        
         ])
     }
 }

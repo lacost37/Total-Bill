@@ -19,6 +19,18 @@ class TipsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    // когда нажимаем на ячейку
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                layer.borderWidth = 3
+                layer.borderColor = #colorLiteral(red: 0.639077723, green: 0.2492567599, blue: 0.6254395843, alpha: 1)
+            } else {
+                layer.borderWidth = 0
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
