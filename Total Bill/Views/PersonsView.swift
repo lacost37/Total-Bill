@@ -29,9 +29,10 @@ class PersonsView: UIView {
     
     lazy var minusbutton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("-", for: .normal)
+       // button.setTitle("-", for: .normal)
         button.tintColor = #colorLiteral(red: 0.4510066509, green: 0.4966486692, blue: 0.5633206367, alpha: 1)
-        button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+       // button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+        button.setImage(UIImage(systemName: "minus"), for: .normal)
         button.addTarget(self, action: #selector(minusButtonTapped), for: .touchUpInside)
         button.isEnabled = false
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -40,9 +41,10 @@ class PersonsView: UIView {
     
     lazy var plusButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("+", for: .normal)
+       // button.setTitle("+", for: .normal)
         button.tintColor = #colorLiteral(red: 0.4510066509, green: 0.4966486692, blue: 0.5633206367, alpha: 1)
-        button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+       // button.titleLabel?.font = UIFont(name: "Avenir Next", size: 70)
+        button.setImage(UIImage(systemName: "plus"), for: .normal)
         button.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -70,6 +72,13 @@ class PersonsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.font = UIFont(name: "Avenir Next", size: frame.width / 26.7)
+        counterLabel.font = UIFont(name: "Avenir Next Bold", size: frame.height / 2.6)
+    }
+    
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -84,11 +93,12 @@ class PersonsView: UIView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 20),
             
             backgroundGrayView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             backgroundGrayView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             backgroundGrayView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            backgroundGrayView.heightAnchor.constraint(equalToConstant: 100),
+            backgroundGrayView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
             minusbutton.topAnchor.constraint(equalTo: backgroundGrayView.topAnchor, constant: 0),
             minusbutton.leadingAnchor.constraint(equalTo: backgroundGrayView.leadingAnchor, constant: 0),

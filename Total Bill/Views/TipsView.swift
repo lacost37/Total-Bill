@@ -40,6 +40,12 @@ class TipsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.font = UIFont(name: "Avenir Next", size: frame.width / 26.7)
+    }
+    
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -92,8 +98,8 @@ extension TipsView: UICollectionViewDelegate {
 // Этот метод определяет и расположение и границы наших ячеек
 extension TipsView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width / 4.5,
-               height: collectionView.frame.width / 4.5)
+        CGSize(width: collectionView.frame.width / 5,
+               height: collectionView.frame.width / 5)
     }
 }
 
@@ -102,11 +108,12 @@ extension TipsView {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            titleLabel.heightAnchor.constraint(equalToConstant: 20),
             
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            collectionView.heightAnchor.constraint(equalToConstant: 100),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         
         ])
     }

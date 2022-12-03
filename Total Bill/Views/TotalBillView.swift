@@ -41,6 +41,13 @@ class TotalBillView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        titleLabel.font = UIFont(name: "Avenir Next", size: frame.width / 26.7)
+        sumTextField.font = UIFont(name: "Avenir Next Bold", size: frame.height / 2.6)
+    }
+    
     func setupView() {
         translatesAutoresizingMaskIntoConstraints = false
         
@@ -56,7 +63,7 @@ class TotalBillView: UIView {
             sumTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2),
             sumTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             sumTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            sumTextField.heightAnchor.constraint(equalToConstant: 100)
+            sumTextField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0)
         ])
     }
 }

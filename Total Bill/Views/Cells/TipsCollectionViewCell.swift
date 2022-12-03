@@ -41,6 +41,13 @@ class TipsCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+       // print(frame.height) - смотрим какая высота
+        precentLabel.font = UIFont(name: "Avenir Next", size: frame.height / 3.4)
+    }
+    
     func setupView() {
         backgroundColor = #colorLiteral(red: 0.9561659694, green: 0.9591339231, blue: 0.9530903697, alpha: 1)
         addSubview(precentLabel)
